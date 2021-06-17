@@ -62,11 +62,13 @@ export default class App extends Component {
   }
 
   fetchPictures = () => {
+    const { query, page, perPage } = this.state
+
     this.loaderToggle()
     const settings = {
-      query: this.state.query,
-      page: this.state.page,
-      perPage: this.state.perPage,
+      query: query,
+      page: page,
+      perPage: perPage,
     }
     return ServiseApi.getImages(settings).then((hits) => {
       this.setState((prev) => ({

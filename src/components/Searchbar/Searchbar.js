@@ -18,9 +18,10 @@ export default class Searchbar extends Component {
   }
 
   onSearchFromSubmit = (e) => {
+    const { onFormSubmit } = this.props
     e.preventDefault()
 
-    this.props.onFormSubmit(this.state.searchQuery)
+    onFormSubmit(this.state.searchQuery)
     this.setState({ searchQuery: "" })
   }
 
