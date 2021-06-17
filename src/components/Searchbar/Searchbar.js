@@ -1,10 +1,11 @@
 import React, { Component } from "react"
-// import PropTypes from "prop-types"
+import PropTypes from "prop-types"
 
 export default class Searchbar extends Component {
-  // static propTypes = {
-  //   prop: PropTypes
-  // }
+  static propTypes = {
+    value: PropTypes.string.isRequired,
+    onFormSubmit: PropTypes.func.isRequired,
+  }
 
   state = {
     searchQuery: "",
